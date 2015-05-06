@@ -1,0 +1,60 @@
+<html>
+
+  <head>
+    <title>Opentok Quick Start</title>
+    <script src='http://static.opentok.com/webrtc/v2.2/js/opentok.min.js'></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src='http://code.jquery.com/jquery-1.11.0.min.js'></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+  </head>
+  <body onload="resizeSubscriber()">
+    <div class="container">
+   <div class="row">
+    <div id="MyPublisherDiv"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="mySubscriberDiv1"></div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="mySubscriberDiv2"></div>
+    <script>
+      $(document).keydown(function(e) {
+          switch (e.which) {
+            case 78: // N key
+               $('#mySubscriberDiv2').stop().animate({ 
+                'top': '+=10' 
+              });
+               break;
+            case 77: // M key
+               $('#mySubscriberDiv2').stop().animate({ 
+                'top': '-=10' });
+               break;
+            }
+          })
+    </script>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="mySubscriberDiv3"></div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-4">
+              <button class="btn btn-default btn-md" value="start" id="buttonA" onclick="buttonA()">Stop Camera A</button>
+      </div>
+
+      <div class="col-lg-4">
+              <button class="btn btn-default btn-md" id="buttonB" onclick="buttonB()">Stop Camera B</button>
+      </div>
+
+      <div class="col-lg-4">
+              <button class="btn btn-default btn-md" id="buttonC" onclick="buttonC()">Stop Camera C</button>
+       </div>
+    
+  </div>
+</div><!--container-->
+
+  </body>
+</html>
+
